@@ -17,9 +17,9 @@ public class playQuiz {
         Scanner kbReader = new Scanner(System.in);
         System.out.println("How many questions? (MAXIMUM: 180)");
         int numQuestions = kbReader.nextInt();
-        if (numQuestions>180) {
+        if (numQuestions > 180) {
             numQuestions = 180;
-        }else if (numQuestions<0) {
+        } else if (numQuestions < 0) {
             numQuestions = 0;
         }
         
@@ -28,7 +28,7 @@ public class playQuiz {
         
         //Display questions from the array until the number displayed matches with the number of questions that the 
         //user wishes to answer (based on inputted number of questions). Adds to the score if the user answered correctly.
-        for (int i = 1; i<=numQuestions; i++) {
+        for (int i = 1; i <= numQuestions; i++) {
             boolean correct = thisQuiz.displayQuestion(i);
             if (correct) {
                 score++;
@@ -36,6 +36,6 @@ public class playQuiz {
         }
         
         //Display final score.
-        System.out.println("YOUR SCORE: "+score+"/"+numQuestions);
+        System.out.println("YOUR SCORE: " + score + "/" + numQuestions);
     }
 }

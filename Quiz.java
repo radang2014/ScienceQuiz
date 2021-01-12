@@ -20,10 +20,10 @@ public class Quiz {
         String[][] result = new String[quizQuestions.length][quizQuestions[0].length];
 
         //Populate empty array with the data in the quizQuestions array in a random order.
-        for (int i = 0; i<quizQuestions.length; i+=0) {
-            int random = (int)(Math.random()*quizQuestions.length);
-            if (!(quizQuestions[random][0]==null)) {
-                for (int j = 0; j<quizQuestions[random].length; j++) {
+        for (int i = 0; i < quizQuestions.length; i += 0) {
+            int random = (int)(Math.random() * quizQuestions.length);
+            if (!(quizQuestions[random][0] == null)) {
+                for (int j = 0; j < quizQuestions[random].length; j++) {
                     result[i][j] = quizQuestions[random][j];
                     quizQuestions[random][j] = null;
                 }
@@ -38,19 +38,19 @@ public class Quiz {
     //Display the question and answer options for the question indicated by the inputted index.
     //Returns true if the user answered the question correctly, false otherwise.
     public boolean displayQuestion(int num) {
-        System.out.println(num+". "+quizQuestions[num-1][0]);
+        System.out.println(num + ". " + quizQuestions[num - 1][0]);
         char option = 'A';
-        for (int i = 1; i<=4; i++) {
-            System.out.println(option+". "+quizQuestions[num-1][i]);
+        for (int i = 1; i <= 4; i++) {
+            System.out.println(option + ". " + quizQuestions[num - 1][i]);
             option++;
         }
         Scanner kbReader = new Scanner(System.in);
         String answer = kbReader.nextLine();
-        if (answer.toUpperCase().equals(quizQuestions[num-1][5])) {
+        if (answer.toUpperCase().equals(quizQuestions[num - 1][5])) {
             System.out.println("Correct!");
             return true;
         }
-        System.out.println("Wrong. The answer was "+quizQuestions[num-1][5]+". ");
+        System.out.println("Wrong. The answer was " + quizQuestions[num - 1][5] + ". ");
         return false;
     }
     
